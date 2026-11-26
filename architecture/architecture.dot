@@ -1,0 +1,32 @@
+digraph Traffic {
+ graph [rankdir=TB,bgcolor="white",fontname="DejaVu Sans",nodesep=.25,ranksep=.48,pad=.25,splines=polyline];
+ node [shape=box,style="rounded,filled",fillcolor="#EDF2F7",color="#8095A9",fontname="DejaVu Sans",fontsize=11,margin=".15,.10"];
+ edge [fontname="DejaVu Sans",fontsize=9,color="#52677C",arrowsize=.65];
+ users [label="Водій спецтранспорту • Диспетчер • Аналітик",fillcolor="#E2F0FA"];
+ sources [label="Камери • IoT • GPS • Метео / навігаційні API",fillcolor="#E2F0FA"];
+ {rank=same;users;sources}
+ subgraph cluster_system {
+ label="Smart Traffic Management System — логічна архітектура"; fontsize=12; fontname="DejaVu Sans"; color="#CBD5E1"; style=rounded;
+ ui [label="1. Інтерфейс\nМаршрут, статус, ручний контроль"];
+ collect [label="2. Збір і підготовка\nСвіжість, шум, ознаки (DP-09/10)"];
+ {rank=same;ui;collect}
+ ai [label="3. ШІ-ядро\nETA: GradientBoostingRegressor (ПР-6)\nCV, RL, маршрути — заплановано",fillcolor="#DFF3E6",color="#32815B",penwidth=1.6];
+ store [label="7. Сховища та аудит\nОперативне • історичне • журнал",shape=cylinder,fillcolor="#F1EAFB"];
+ {rank=same;ai;store}
+ decision [label="4. Модуль рішень і ескалації\nDP-04/10 + правила ПР-7/8\nПрийняти / перевірити / відхилити / чекати",fillcolor="#FFF2D7",color="#B88527",penwidth=1.6];
+ controller [label="5. Контролер світлофора\nЛокальний захист; офлайн-цикл"];
+ notify [label="6. Сповіщення та інтеграції\nПідтверджені події"];
+ {rank=same;controller;notify}
+ }
+ result [label="Світлофори • LED-табло • Навігація\nРезультат проєктування, не реальне керування",fillcolor="#E2F0FA"];
+ users -> ui [label="запит / вибір / override",dir=both]; sources -> collect [label="телеметрія"];
+ collect -> ai [label="ознаки"]; collect -> store [label="події"];
+ store -> ai [label="історія / навчання"];
+ ui -> decision [label="запит / рішення людини",dir=both];
+ ai -> decision [label="T, інтервал, score"];
+ decision -> ai [label="запит",constraint=false];
+ decision -> store [label="аудит",constraint=false];
+ decision -> controller [label="лише після перевірок",style=dashed,dir=both];
+ decision -> notify [label="підтверджена подія",style=dashed];
+ controller -> result [style=dashed]; notify -> result [style=dashed];
+}

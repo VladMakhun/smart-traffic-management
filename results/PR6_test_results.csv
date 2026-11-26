@@ -1,0 +1,7 @@
+distance_m,ambulance_speed_kmh,queue_cars,density_pct,flow_speed_kmh,weather_code,hour,weekday,gps_age_s,expected_s,predicted_s,low_s,high_s,confidence_score,decision,correct_5s
+110,65,0,15,55,0,11,1,1,6.9,6.4,6.3,16.9,0.894,NO_AUTO_GREEN,True
+250,45,5,55,35,1,8,2,2,32.8,30.4,27.1,37.0,0.901,NO_AUTO_GREEN,True
+480,28,15,90,12,2,18,4,3,97.0,96.6,64.4,99.9,0.645,NO_AUTO_GREEN,True
+170,60,2,25,50,0,14,3,8,12.8,12.6,12.3,20.2,0.921,ESCALATE_STALE_GPS,True
+320,35,9,80,17,1,17,0,2,53.9,48.0,38.8,53.0,0.858,NO_AUTO_GREEN,False
+90,70,0,12,62,0,12,5,1,5.2,5.8,5.9,16.4,0.895,NO_AUTO_GREEN,True

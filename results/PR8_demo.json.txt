@@ -1,0 +1,21 @@
+Fresh GPS {
+  "mode": "REVIEW",
+  "reason": "Uncertain or inconsistent prediction",
+  "prediction": {
+    "predicted_s": 12.48,
+    "interval_s": [
+      10.7,
+      20.5
+    ],
+    "confidence_score": 0.902,
+    "decision": "RECOMMEND_GREEN",
+    "command_sent": false
+  },
+  "command_sent": false
+}
+Stale GPS {
+  "mode": "REJECT",
+  "reason": "DP-10: invalid/stale GPS; dispatcher",
+  "prediction": null,
+  "command_sent": false
+}

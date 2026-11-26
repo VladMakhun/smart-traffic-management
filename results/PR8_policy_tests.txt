@@ -1,0 +1,22 @@
+PR6 rerun: MAE=3.08; baseline=12.17; coverage=65.8%
+test_gps_5 (__main__.Policy.test_gps_5) ... ok
+test_gps_6 (__main__.Policy.test_gps_6) ... ok
+test_green (__main__.Policy.test_green) ... ok
+test_hazard (__main__.Policy.test_hazard) ... ok
+test_inconsistent (__main__.Policy.test_inconsistent) ... ok
+test_low_score (__main__.Policy.test_low_score) ... ok
+test_missing (__main__.Policy.test_missing) ... ok
+test_model_error (__main__.Policy.test_model_error) ... ok
+test_out_of_range (__main__.Policy.test_out_of_range) ... ok
+test_override (__main__.Policy.test_override) ... ok
+test_real_model (__main__.Policy.test_real_model) ... ok
+test_route (__main__.Policy.test_route) ... ok
+test_score_boundary (__main__.Policy.test_score_boundary) ... ok
+test_sensor (__main__.Policy.test_sensor) ... ok
+test_threshold_interval (__main__.Policy.test_threshold_interval) ... ok
+test_wait (__main__.Policy.test_wait) ... ok
+
+----------------------------------------------------------------------
+Ran 16 tests in 0.007s
+
+OK

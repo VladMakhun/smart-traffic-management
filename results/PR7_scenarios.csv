@@ -1,0 +1,15 @@
+id,scenario,expected_s,predicted_s,confidence_score,decision,correct
+1,Вільна дорога 85 м,4.81,4.93,0.894,NO_AUTO_GREEN,true
+2,140 м 1 авто,10.14,10.73,0.909,RECOMMEND_GREEN,true
+3,210 м дощ 7 авто,28.65,26.12,0.931,NO_AUTO_GREEN,true
+4,320 м затор дощ,53.89,47.97,0.858,NO_AUTO_GREEN,false
+5,620 м сильний затор,177.57,137.88,0.280,NO_AUTO_GREEN,false
+6,70 м вільна дорога,3.86,2.35,0.895,NO_AUTO_GREEN,true
+7,450 м GPS 5 с,42.45,45.47,0.938,NO_AUTO_GREEN,true
+8,GPS 6 с,,,,ESCALATE_STALE_GPS,true
+9,Немає даних черги,,,,ESCALATE_MISSING_DATA,true
+10,Немає GPS,,,,ESCALATE_STALE_GPS,true
+11,900 м поза діапазоном,359.43,162.87,0.130,NO_AUTO_GREEN,false
+12,120 м 1 авто,8.25,8.27,0.915,RECOMMEND_GREEN,true
+13,300 м дощ,44.16,42.95,0.918,NO_AUTO_GREEN,true
+14,550 м сильний дощ,110.32,102.74,0.671,NO_AUTO_GREEN,false
